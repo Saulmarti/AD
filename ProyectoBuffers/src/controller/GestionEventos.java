@@ -67,6 +67,7 @@ public class GestionEventos {
 			public void actionPerformed(ActionEvent actionEvent) {
 
 				call_recuperar_todos();
+				
 			}
 		};
 		view.getbtnRecuperarLibros().addActionListener(actionListener_recuperar_todos);

@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class GestionDatos {
 
@@ -136,6 +137,38 @@ public class GestionDatos {
 		return ultima_aparicion;
 	}	
 	
+	//Ej2
+	
+	public int numeroPalabras(String fichero1, int longitud) {
+		File f1 = new File(fichero1);
+		String cadena,palabra="";
+		int contador = 0;
+		
+		
+		try {
+			BufferedReader br1 = abrirFichero(f1);
+			cadena=br1.readLine();
+			
+			while(cadena.length()>longitud){
+			contador++;
+						
+			}
+			
+			
+		}
+		catch (IOException e) {
+
+			System.out.println("Hay 0 palabras");
+		}
+	
+				
+		return contador;
+		
+
+	}
+	
+	
+	
 	public int copiarFichero(String entrada, String salida) throws IOException {
         FileInputStream fi;       
         FileOutputStream fo;
@@ -199,6 +232,33 @@ public class GestionDatos {
 			entrada.close();	
 	
 		return libro;
+	}
+	
+	// Ejercicio 1
+	
+	public void modificarPaginas(String id, String titulo, String autor, String año, String editor,String paginas, String nuevaPaginas) {
+	File salida= new File("Libros\\"+id);
+	File entrada= new File("Libros\\"+id);
+	
+	try {
+		BufferedReader lectura=new BufferedReader(new FileReader(entrada));
+		String linea;
+		while((linea=lectura.readLine())!=null) {
+			if (linea.toUpperCase().trim().equals(paginas.toUpperCase().trim())){
+				guardar_Libro(id, titulo, autor, año, editor, nuevaPaginas);
+			}else {guardar_Libro(id, titulo, autor, año, editor, paginas);
+				
+			}
+			
+		}
+		entrada.delete();
+		salida.renameTo(entrada);
+		lectura.close();
+		
+	} catch (IOException e) {
+		System.out.println("Error, el fichero no existe");
+	}		
+		
 	}
 
 	public void Cerrar(Closeable Cerrar) {
