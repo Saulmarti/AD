@@ -1,40 +1,46 @@
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Libro implements Serializable{
 	
 	
 	private String titulo=null;
-	private String autor=null;
+	ArrayList <String> autores=null;
 	private String año=null;
 	private String editor=null;
 	private String paginas=null;
 	
 	
-	public Libro(String titulo, String autor, String año, String editor, String paginas) {
+	public Libro(String titulo, ArrayList <String>  autores, String año, String editor, String paginas) {
 		super();
 		
 		this.titulo = titulo;
-		this.autor = autor;
+		this.autores = autores;
 		this.año = año;
 		this.editor = editor;
 		this.paginas = paginas;
 	}
 	
 	
+	public Libro() {
+	
+	}
+
+
 	public String getTitulo() {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getAutor() {
-		return autor;
+	public ArrayList <String> getListaAutores() {
+		
+		return autores;
 	}
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
+	
 	public String getAño() {
 		return año;
 	}
@@ -54,8 +60,25 @@ public class Libro implements Serializable{
 		this.paginas = paginas;
 	}
 
-	public void print() {
-		System.out.println("Titulo: "+titulo+" Autor: "+autor+" Año: "+año+" Editor: "+editor+" Paginas: "+paginas);
+
+
+	public String getAutores() {
+		
+		StringBuilder listaAutores = new StringBuilder();
+		
+		for(int i=0; i<autores.size(); i++) {
+			listaAutores.append(autores.get(i));
+			if(!(autores.size() ==  (i+1))) {
+				listaAutores.append(", ");
+			}
+		}
+		
+		return listaAutores.toString();
+	}
+	
+public void print() {
+		
+		System.out.println("Titulo: "+titulo+" Autor: "+getAutores()+" Año: "+año+" Editor: "+editor+" Paginas: "+paginas);
 		
 	}
 	

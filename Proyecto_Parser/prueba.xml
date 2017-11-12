@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libros>
+<libro anyo="1998">
+<titulo>titu</titulo>
+<autor>yo<nombre>yo</nombre>
+</autor>
+<editor>edi</editor>
+<paginas>23</paginas>
+</libro>
+</libros>
