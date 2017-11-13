@@ -81,6 +81,11 @@ public void print() {
 		System.out.println("Titulo: "+titulo+" Autor: "+getAutores()+" Año: "+año+" Editor: "+editor+" Paginas: "+paginas);
 		
 	}
+
+
+public void setAutores(ArrayList<String> autores) {
+	this.autores = autores;
+}
 	
 	
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libros>
 <libro>
-<titulo anyo="2017">titulo</titulo>
+<titulo anyo="34">e</titulo>
 <autor>
-<nombre>autor</nombre>
+<nombre>er</nombre>
 </autor>
-<editor>editor</editor>
-<paginas>200</paginas>
+<editor>er</editor>
+<paginas>34</paginas>
 </libro>
 </libros>

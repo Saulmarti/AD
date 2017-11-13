@@ -73,7 +73,7 @@ public class Parser_Libro {
 		System.out.println("Introduce el nombre del fichero a parsear: ");
 		fichero=teclado.nextLine();
 		
-		Parser parser=new Parser();
+		ParserFichero parser=new ParserFichero();
 		parser.parseFicheroXml(fichero);
 		parser.parseDocument();
 		parser.print();
